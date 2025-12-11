@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Chamado</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="config.js"></script>
+    
+    <script src="email.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <h3><img src="icon.png" width="24" style="vertical-align: middle;"> Novo Chamado - Desenvolvimento</h3>
+    </div>
+
+    <div class="form-group">
+        <label class="section-label">Tipo de Chamado</label>
+        <select id="ticketType" class="input-field">
+            <option value="bug">📌 Bug / Erro</option>
+            <option value="suggestion">📌 Sugestão de Melhoria</option>
+            <option value="feature">📌 Nova Funcionalidade</option>
+            <option value="nfse">📌 NFS-e</option> 
+        </select>
+    </div>
+
+    <div class="form-group">
+      <label class="section-label">Prioridade</label>
+      <div class="priority-group">
+          <label class="priority-option">
+              <input type="radio" name="priority" value="urgente">
+              <span>Urgente</span>
+          </label>
+
+          <label class="priority-option">
+              <input type="radio" name="priority" value="media" checked> 
+              <span>Média</span>
+          </label>
+
+          <label class="priority-option">
+              <input type="radio" name="priority" value="baixa">
+              <span>Baixa</span>
+          </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="section-label">Sistemas Afetados</label>
+        <div class="checkbox-group">
+            <label class="checkbox-item">
+                <input type="checkbox" value="Nota Anápolis" class="system-checkbox"> Nota Anápolis
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="Nota Goiânia" class="system-checkbox"> Nota Goiânia
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="Emissor RF" class="system-checkbox"> Emissor RF
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="POS Emissor" class="system-checkbox"> POS Emissor
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="TEF POS" class="system-checkbox"> TEF POS
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="Outro" class="system-checkbox"> Outro
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="section-label">Descrição do Problema</label>
+        <textarea id="description" class="input-field" placeholder="Descreva o passo a passo do que aconteceu..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label class="section-label">Arquivos (Máx: 3)</label>
+        
+        <div class="upload-area" id="dropZone">
+            <p style="cursor: text;">Clique aqui e <strong>Dê Ctrl+V</strong></p>
+            
+            <p style="font-size: 11px; color: #94a3b8; margin: 5px 0;">ou</p>
+
+            <label for="fileInput" class="btn-select">
+                📂 Selecionar Arquivos
+            </label>
+
+            <input type="file" id="fileInput" accept="image/*, .xml, .txt, .json, .log" multiple style="display: none;">
+        </div>
+
+        <div id="previewGrid" class="preview-grid"></div>
+    </div>
+
+    <button id="sendBtn" disabled>📤 Enviar por Email</button>
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

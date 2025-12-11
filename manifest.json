@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Suporte Logger",
+  "version": "1.1",
+  "description": "Ferramenta Interna para chamados ao time de Desenvolvimento",
+  "permissions": [
+    "activeTab" 
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Abrir Chamado",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
