@@ -294,7 +294,6 @@ document.addEventListener('DOMContentLoaded', function() {
             'bug': 'Bug - Erro',
             'feature': 'Nova Funcionalidade',
             'suggestion': 'Sugestão de Melhoria',
-            'nfse': 'NFS-e'
         };
         const selectedValue = ticketSelect.value;
         const cleanCategory = categoryMap[selectedValue] || selectedValue;
